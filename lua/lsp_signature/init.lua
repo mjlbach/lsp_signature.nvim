@@ -91,6 +91,7 @@ local function signature_help_handler(_, result, ctx, config)
   end
 
   if hl then
+    api.nvim_buf_clear_namespace(fbuf, -1, 0, -1)
     api.nvim_buf_add_highlight(fbuf, -1, "LspSignatureActiveParameter", 0, unpack(hl))
   end
   return fbuf, fwin
