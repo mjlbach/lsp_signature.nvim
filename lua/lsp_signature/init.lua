@@ -10,7 +10,7 @@ local function generate_active_signature_help_autocmd(bufnr, client_id)
   vim.cmd(string.format('augroup signature_help_%d_%d', client_id, bufnr))
   vim.cmd('au!')
   vim.cmd(string.format(
-    "autocmd InsertCharPre,CursorMoved,CursorMovedI <buffer=%d> lua require'signature_help_2'._ActiveSignatureEvent(%s)",
+    "autocmd InsertCharPre,CursorMoved,CursorMovedI <buffer=%d> lua require'lsp_signature'._ActiveSignatureEvent(%s)",
     bufnr,
     client_id
   ))
@@ -21,7 +21,7 @@ local function generate_signature_help_autocmd(bufnr, client_id)
   vim.cmd(string.format('augroup signature_help_%d_%d', client_id, bufnr))
   vim.cmd('au!')
   vim.cmd(string.format(
-    "autocmd InsertCharPre <buffer=%d> lua require'signature_help_2'._TriggerCharEvent(%s)",
+    "autocmd InsertCharPre <buffer=%d> lua require'lsp_signature'._TriggerCharEvent(%s)",
     bufnr,
     client_id
   ))

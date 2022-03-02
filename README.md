@@ -33,3 +33,7 @@ require('lspconfig').pyright.setup {
   on_attach = on_attach
 }
 ```
+
+# Credit
+
+The design of this was heavily inspired by `nvim-lsp-compl`
