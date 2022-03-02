@@ -1,3 +1,8 @@
+# Description
+
+This plugin automatically triggers signature help for you:
+<img width="923" alt="image" src="https://user-images.githubusercontent.com/13316262/156455178-89d68570-31ee-4129-badd-ed272eb75cbf.png">
+
 # Installation
 
 With packer:
