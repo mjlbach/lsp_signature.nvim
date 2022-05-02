@@ -62,7 +62,7 @@ local function signature_help_handler(_, result, ctx, config)
     return
   end
 
-  local triggers = client.resolved_capabilities.signature_help_trigger_characters
+  local triggers = client.server_capabilities.signatureHelpProvider.triggerCharacters
   local ft = api.nvim_buf_get_option(ctx.bufnr, 'filetype')
   local lines, hl = vim.lsp.util.convert_signature_help_to_markdown_lines(result, ft, triggers)
   lines = vim.lsp.util.trim_empty_lines(lines)
@@ -129,7 +129,7 @@ function M.attach(client, bufnr)
     triggers = {}
     triggers_by_buf[bufnr] = triggers
   end
-  local signature_triggers = client.resolved_capabilities.signature_help_trigger_characters
+  local signature_triggers = client.server_capabilities.signatureHelpProvider.triggerCharacters
   if signature_triggers and #signature_triggers > 0 then
     table.insert(triggers, { signature_triggers, signature_help_request })
   end
